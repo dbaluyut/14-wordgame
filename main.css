@@ -3,3 +3,24 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+/* #display .shown {
+  display: contents;
+} */
+
+#display {
+  /* color: white;
+   */
+  /* display: none; */
+}
+
+.guessBox {
+  border: 1px solid red;
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
+}
+
+.container {
+  display: flex;
+}
