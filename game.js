@@ -13,16 +13,13 @@ let randomIndex = Math.floor(Math.random() * 77) + 1 - 1
 // randomWord IS AN ARRAY
 let randomWord = filtered[randomIndex]
 
-//REPLACE randomWord WITH '_'
-let hiddenWord = ""
-
-// for (let i = 0; i < randomWord.length; i++) {
-//   hiddenWord += `<div class="guessBox"></div> `
-// }
-
+//REPLACE randomWord WITH '-'
+let hiddenWord = []
 for (let i = 0; i < randomWord.length; i++) {
-  // hiddenWord += `<div class="guessBox" id="letter${[i]}"></div>`
-  hiddenWord += `-`
+  hiddenWord.push(`<div class="guessBox"></div>`)
+  // hiddenWord += `<div class="guessBox"></div>`
+
+  console.log(hiddenWord)
 }
 
 // let hiddenWord = randomWord.map(function () {
@@ -35,30 +32,50 @@ console.dir(hiddenWord)
 document.getElementById("display").innerHTML = hiddenWord
 
 console.log(randomWord)
-
-//ADDEVENT LISTENER KEYPRESS TEST
-
 let pressedKey = ""
+//ADDEVENT LISTENER KEYPRESS TEST
 
 document.addEventListener("keypress", function (e) {
   // console.log(e.key)
-  // pressedKey = e.key
+
   // console.log(randomWord.includes(e.key))
   if (randomWord.includes(e.key)) {
-    document.getElementById("display").innerHTML = "newword"
+    for (let i = 0; i < randomWord.length; i++) {
+      if (randomWord[i] === e.key) {
+        // newWord += randomWord[i]
+        hiddenWord.splice(i, 1, `<div class="guessBox">${randomWord[i]}</div>`)
+      }
+      document.getElementById("display").innerHTML = hiddenWord
+    }
+    // document.getElementById("display").innerHTML = "newword"
   } else {
+    pressedKey += e.key
     lives = lives - 1
+    document.getElementById("health").innerHTML = lives
+    document.getElementById("key-hist").innerHTML = pressedKey
+    if (lives === 0) {
+      if (alert("you dieded, try agen")) {
+      } else window.location.reload()
+    }
   }
-  console.log(lives)
+  if (!hiddenWord.includes(`<div class="guessBox"></div>`)) {
+    alert("you wonded")
+  }
 })
 
-let newWord = ""
+// let newWord = ""
 
-console.log(pressedKey)
+// for (let i = 0; i < randomWord.length; i++) {
+//   if(randomWord[i] === e.key) {
+//     newWord += randomWord[i]
+//   }
+// }
+
+// console.log(pressedKey)
 
 // console.log(hiddenWord.includes(e.key))
 
-console.log(document.getElementById("display").innerText)
+// console.log(document.getElementById("display").innerText)
 
 // if (lives == 0) {
 //   alert("you ded")
