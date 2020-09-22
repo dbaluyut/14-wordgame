@@ -29,7 +29,7 @@ for (let i = 0; i < randomWord.length; i++) {
 console.dir(hiddenWord)
 
 //PLAYER TO GUESS 'randomWord'
-document.getElementById("display").innerHTML = hiddenWord
+document.getElementById("display").innerHTML = hiddenWord.join("")
 
 console.log(randomWord)
 let pressedKey = ""
@@ -45,9 +45,8 @@ document.addEventListener("keypress", function (e) {
         // newWord += randomWord[i]
         hiddenWord.splice(i, 1, `<div class="guessBox">${randomWord[i]}</div>`)
       }
-      document.getElementById("display").innerHTML = hiddenWord
+      document.getElementById("display").innerHTML = hiddenWord.join("")
     }
-    // document.getElementById("display").innerHTML = "newword"
   } else {
     pressedKey += e.key
     lives = lives - 1
@@ -58,6 +57,7 @@ document.addEventListener("keypress", function (e) {
       } else window.location.reload()
     }
   }
+
   if (!hiddenWord.includes(`<div class="guessBox"></div>`)) {
     alert("you wonded")
   }

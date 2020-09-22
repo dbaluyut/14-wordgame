@@ -1,7 +1,12 @@
+/* colors */
+/* #f8e3c4 #cc3495 #6b1fb1 #0b0630  */
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Press Start 2P";
+  color: #f8e3c4;
 }
 
 /* #display .shown {
@@ -13,13 +18,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  border-bottom: 4px solid #f8e3c4;
   width: 4rem;
   height: 4rem;
   margin: 1rem;
+  /* border-radius: 15%; */
+
+  color: #f8e3c4;
 }
 
 .container {
   display: flex;
   justify-content: center;
+  background-color: #0b0630;
+  align-items: center;
 }
+
+#display {
+  padding: 2rem 1rem;
+}
+body {
+  background-color: #0b0630;
+}
+
+#title {
+  background-color: #6b1fb1;
+}
+
+.center {
+  margin-top: 18rem;
+}
+
+.nes-container.is-dark {
+  background-color: #0b0630;
+  border-color: #6b1fb1;
+}
+
+.nes-container.is-dark.with-title>.title {
+  color: #6b1fb1;
+  background-color: #0b0630;
