@@ -1,6 +1,8 @@
 import { commonWords } from "./constants.js"
+let lives2 = 8
 
-let lives = 8
+let lives = ""
+// document.getElementById("health").innerHTML = lives
 
 console.dir(commonWords)
 
@@ -49,10 +51,14 @@ document.addEventListener("keypress", function (e) {
     }
   } else {
     pressedKey += e.key
-    lives = lives - 1
+    lives2 = lives2 - 1
     document.getElementById("health").innerHTML = lives
+
+    //REMOVE HEART FROM HTML
+    document.querySelector(".heart").remove()
+
     document.getElementById("key-hist").innerHTML = pressedKey
-    if (lives === 0) {
+    if (lives2 === 0) {
       if (alert("you dieded, try agen")) {
       } else window.location.reload()
     }
@@ -62,21 +68,4 @@ document.addEventListener("keypress", function (e) {
     alert("you wonded")
   }
 })
-
-// let newWord = ""
-
-// for (let i = 0; i < randomWord.length; i++) {
-//   if(randomWord[i] === e.key) {
-//     newWord += randomWord[i]
-//   }
-// }
-
-// console.log(pressedKey)
-
-// console.log(hiddenWord.includes(e.key))
-
-// console.log(document.getElementById("display").innerText)
-
-// if (lives == 0) {
-//   alert("you ded")
-// }
+// document.querySelector(".heart").remove()

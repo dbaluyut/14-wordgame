@@ -46,7 +46,7 @@ body {
 }
 
 .center {
-  margin-top: 18rem;
+  margin-top: 8rem;
 }
 
 .nes-container.is-dark {
@@ -54,6 +54,30 @@ body {
   border-color: #6b1fb1;
 }
 
-.nes-container.is-dark.with-title>.title {
-  color: #6b1fb1;
+.nes-container.is-dark.with-title > .title {
+  color: #f8e3c4;
   background-color: #0b0630;
+  font-size: 2rem;
+}
+
+.heart {
+  height: 3rem;
+  position: relative;
+  top: 2rem;
+}
+
+#key-hist {
+  position: relative;
+  margin-top: 1rem;
+}
+
+h3 {
+  margin-top: 3rem;
+}
+
+.container-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
